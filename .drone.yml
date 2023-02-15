@@ -1,0 +1,18 @@
+kind: pipeline
+name: default
+
+steps:
+- name: Analyze
+  image: anchore/engine-cli
+  environment:
+    ANCHORE_CLI_URL: https://localhost:8228
+  commands:
+   - anchore-cli image add nexus01.siab01.com:18443/backend/demo-simreg-simregservice:latest
+   - anchore-cli image wait nexus01.siab01.com:18443/backend/demo-simreg-simregservice:latest
+
+- name: Policy Check and Evaluation
+  image: anchore/engine-cli
+  environment:
+    ANCHORE_CLI_URL: https://localhost:8228
+  commands:
+   - anchore-cli evaluate check nexus01.siab01.com:18443/backend/demo-simreg-simregservice:latest --detail
