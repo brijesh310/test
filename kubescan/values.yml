@@ -1,5 +1,0 @@
-securityContext:
-  runAsNonRoot: true
-  runAsUser: 1000
-  fsGroup: 1000
-kubeVersion: "1.22.1"
