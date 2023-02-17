@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: kube-bench
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: kube-bench
+            image: aquasec/kube-bench:latest
+            command: ["/kube-bench", "--version=1.22", "--config=master", "--logtostderr"]
+            volumeMounts:
+            - name: config-volume
+              mountPath: /etc/kubernetes
+          restartPolicy: Never
+          volumes:
+          - name: config-volume
+            configMap:
+              name: kube-bench-config
+  successfulJobsHistoryLimit: 3
