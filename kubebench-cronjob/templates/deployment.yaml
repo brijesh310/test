@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: kube-bench
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
