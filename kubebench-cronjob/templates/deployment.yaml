@@ -11,7 +11,7 @@ spec:
           containers:
           - name: kube-bench
             image: docker.io/aquasec/kube-bench:v0.6.11
-            command: ["/kube-bench", "--version=1.22", "--config=master", "--logtostderr"]
+            command: ["kube-bench"]
             volumeMounts:
             - name: config-volume
               mountPath: /etc/kubernetes
