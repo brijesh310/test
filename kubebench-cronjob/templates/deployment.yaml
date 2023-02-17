@@ -82,4 +82,3 @@ spec:
             - name: opt-cni-bin
               hostPath:
                 path: "/opt/cni/bin/"
-          serviceAccountName: kubebench
