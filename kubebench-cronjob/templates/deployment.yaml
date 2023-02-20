@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: kube-bench
 spec:
-  schedule: "*/10 * * * 1"
+  schedule: "*/2 * * * *"
   jobTemplate:
     spec:
       template:
@@ -29,7 +29,7 @@ metadata:
 data:
   CIS_VERSION: "1.6"
   RUN_TESTS: "1"
-  ETCD_ENDPOINT: "https://etcd.example.com:2379"
-  KUBE_APISERVER: "https://api.example.com:6443"
+  ##ETCD_ENDPOINT: "https://etcd.example.com:2379"
+  ##KUBE_APISERVER: "https://api.example.com:6443"
   KUBELET_CONFIG: "/etc/kubernetes/kubelet.conf"
   KUBE_PROXY_CONFIG: "/etc/kubernetes/proxy.conf"
