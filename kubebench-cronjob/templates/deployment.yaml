@@ -8,6 +8,8 @@ spec:
     spec:
       template:
         spec:
+          nodeSelector:
+            environment: production
           containers:
           - name: kube-bench
             image: docker.io/aquasec/kube-bench:v0.6.11
