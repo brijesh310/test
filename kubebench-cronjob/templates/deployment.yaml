@@ -22,17 +22,6 @@ spec:
           - name: config-volume
             configMap:
               name: kube-bench-config
-    spec:
-      template:
-        spec:
-          nodeSelector:
-            environment: production
-          containers:
-          - name: kube-hunter
-            image: docker.io/aquasec/kube-hunter:0.6.8
-            command: ["kube-hunter"]
-            args: ["--pod"]
-          restartPolicy: Never
   successfulJobsHistoryLimit: 3
 ---
 apiVersion: v1
