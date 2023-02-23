@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: kube-bench
+  name: kube-hunter
 spec:
   schedule: "*/2 * * * *"
   jobTemplate:
