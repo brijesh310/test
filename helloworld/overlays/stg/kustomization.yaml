@@ -1,0 +1,8 @@
+bases:
+  - ../../helloworld
+namePrefix: helloworld-
+nameSuffix: -stag
+commonLabels:
+  environment: stag
+
+replicaCount: 4

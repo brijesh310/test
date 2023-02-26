@@ -1,0 +1,8 @@
+bases:
+  - ../../helloworld
+namePrefix: helloworld-
+nameSuffix: -dev
+commonLabels:
+  environment: dev
+
+replicaCount: 2
