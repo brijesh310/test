@@ -4,17 +4,17 @@ resources:
   - helmchart/test-chart
   #- helmChart.yaml
 patches:
-  - path: dev/values.yaml
+  - path: ../../overlays/dev/values.yaml
     target:
       kind: Deployment
       name: my-app
       namespace: my-namespace-app-dev
-  - path: stg/values.yaml
+  - path: ../../overlays/stg/values.yaml
     target:
       kind: Deployment
       name: my-app
       namespace: my-namespace-app-stg
-  - path: prod/values.yaml
+  - path: ../../overlays/prod/values.yaml
     target:
       kind: Deployment
       name: my-app
