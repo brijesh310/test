@@ -1,8 +1,0 @@
-bases:
-  - ../../helloworld
-namePrefix: helloworld-
-nameSuffix: -qa
-commonLabels:
-  environment: qa
-
-replicaCount: 3

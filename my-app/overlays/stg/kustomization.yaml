@@ -1,8 +1,0 @@
-bases:
-  - ../../my-app
-namePrefix: my-app-
-nameSuffix: -stg
-commonLabels:
-  environment: stg
-replicaCount: 4
-

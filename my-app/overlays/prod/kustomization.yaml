@@ -1,7 +1,0 @@
-bases:
-  - ../../my-app
-namePrefix: my-app-
-nameSuffix: -prod
-commonLabels:
-  environment: prod
-replicaCount: 5
