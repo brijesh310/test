@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  #- helmchart/my-app
-  - helmChart.yaml
+  - helmchart/test-chart
+  #- helmChart.yaml
 patches:
   - path: dev/values.yaml
     target:
