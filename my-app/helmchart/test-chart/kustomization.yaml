@@ -1,21 +1,2 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
-  - helmchart/test-chart
-  #- helmChart.yaml
-patches:
-  - path: ../../overlays/dev/values.yaml
-    target:
-      kind: Deployment
-      name: my-app
-      namespace: my-namespace-app-dev
-  - path: ../../overlays/stg/values.yaml
-    target:
-      kind: Deployment
-      name: my-app
-      namespace: my-namespace-app-stg
-  - path: ../../overlays/prod/values.yaml
-    target:
-      kind: Deployment
-      name: my-app
-      namespace: my-namespace-app-prod
