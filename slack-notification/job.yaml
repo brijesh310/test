@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: slack-notification
-        image: curlimages/curl
+        image: my-slack-image
         command:
           - "curl"
           - "-X"
