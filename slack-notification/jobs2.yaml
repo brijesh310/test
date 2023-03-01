@@ -1,9 +1,9 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: app-slack-notification-
+  generateName: app-slack-notification-fail-
   annotations:
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook: SyncFail
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
@@ -11,12 +11,12 @@ spec:
       containers:
       - name: slack-notification
         image: curlimages/curl
-        command:
+        command: 
           - "curl"
           - "-X"
           - "POST"
           - "--data-urlencode"
-          - "payload={\"channel\": \"#argocd-jobs\", \"username\": \"argoCDAdmin\", \"text\": \"App Sync succeeded\", \"icon_emoji\": \":200w:\"}"
+          - "payload={\"channel\": \"#argocd-jobs\", \"username\": \"argoCDAdmin\", \"text\": \"App Sync failed\", \"icon_emoji\": \":debug_icon:\"}"
           - "https://hooks.slack.com/services/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"
       restartPolicy: Never
   backoffLimit: 2
